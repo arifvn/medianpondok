@@ -81,7 +81,7 @@
   color: #feee58;
   font-size: 1.4rem;
   font-weight: 400;
-  margin-top: 2em;
+  margin-top: 1em;
   text-transform: uppercase;
   letter-spacing: 0.125em;
   margin-bottom: 0.5em;
@@ -97,7 +97,7 @@
 }
 
 .jumbotron p {
-  margin-top: 1.5em;
+  margin-top: 1em;
   color: #fff;
   text-align: center;
   font-size: 1.5rem;
