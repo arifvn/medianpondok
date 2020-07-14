@@ -64,6 +64,15 @@
   .nav-item {
     text-align: left;
   }
+
+  .scrolled {
+    background-color: #72b860 !important;
+    transition: all 200ms linear;
+  }
+
+  .scrolled-nav-item {
+    color: #fff !important;
+  }
 }
 
 /* jumbotron */
@@ -72,7 +81,6 @@
   background-color: #72b860;
   height: 70vh;
   margin-bottom: 0px;
-  margin-top: 4em;
 }
 
 .jumbotron .median-title {
@@ -162,7 +170,7 @@
 }
 
 .blob {
-  position: fixed;
+  /* position: relative; */
   top: -30px;
   right: -160px;
   fill: #fff;
