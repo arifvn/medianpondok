@@ -3,13 +3,14 @@
 }
 
 body {
-  overflow: scroll-y;
   overflow-x: hidden;
 }
 
-.navbar-nav {
-  margin: 0;
-  padding: 7.5px 15px;
+.dropdown-menu {
+  min-width: 0;
+}
+.dropdown-menu .dropdown-item {
+  white-space: normal;
 }
 
 /* navbar */
