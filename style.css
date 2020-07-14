@@ -101,6 +101,7 @@
 .jumbotron {
   background-color: #72b860;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .jumbotron .median-title {
