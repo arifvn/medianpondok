@@ -67,11 +67,32 @@
 
   .scrolled {
     background-color: #72b860 !important;
-    transition: all 200ms linear;
+    transition: background-color 200ms linear;
   }
 
-  .scrolled-nav-item {
+  .scrolled-item {
     color: #fff !important;
+  }
+}
+
+.blob {
+  position: absolute;
+  fill: #fff;
+  opacity: 0.2;
+  right: 0;
+  top: 0;
+  width: 54vmax;
+}
+
+/* blob */
+@media (min-width: 992px) {
+  .blob {
+    position: absolute;
+    fill: #fff;
+    opacity: 1;
+    right: 0;
+    top: 0;
+    width: 54vmax;
   }
 }
 
@@ -79,8 +100,7 @@
 
 .jumbotron {
   background-color: #72b860;
-  height: 70vh;
-  margin-bottom: 0px;
+  height: 100vh;
 }
 
 .jumbotron .median-title {
@@ -89,7 +109,7 @@
   color: #feee58;
   font-size: 1.4rem;
   font-weight: 400;
-  margin-top: 1em;
+  margin-top: 3em;
   text-transform: uppercase;
   letter-spacing: 0.125em;
   margin-bottom: 0.5em;
@@ -116,9 +136,6 @@
   opacity: 0.8;
 }
 
-.jumbotron .col-md-6 .col {
-  margin-top: 3em;
-}
 .jumbotron button {
   padding-left: 1em;
   padding-right: 1em;
@@ -131,31 +148,35 @@
   border-radius: 1em;
 }
 
+.jumbotron .container {
+  height: 90vh;
+}
+
+.jumbotron .container .row {
+  height: 100%;
+}
+
 @media (min-width: 992px) {
   .jumbotron {
-    height: 110vh;
-    margin-top: 0;
+    height: 100vh;
   }
 
   .jumbotron .median-title {
-    margin-top: 2em;
     text-align: left;
     font-size: 2rem;
+    margin-top: 1em;
     margin-bottom: 0.2em;
   }
 
   .jumbotron .median-title-span {
     font-size: 5rem;
+    margin-top: 0.4em;
     text-align: left;
-    line-height: 1.1em;
+    line-height: 0.7em;
   }
 
   .jumbotron p {
     margin-top: 3em;
-  }
-
-  .jumbotron .col-md-6 .col {
-    margin-top: 0;
   }
 
   .jumbotron button {
@@ -169,52 +190,38 @@
   }
 }
 
-.blob {
-  /* position: relative; */
-  top: -30px;
-  right: -160px;
-  fill: #fff;
-  opacity: 0.1;
-  width: 54vmax;
-}
-
-@media (min-width: 992px) {
-  .blob {
-    position: absolute;
-    top: -300px;
-    right: -180px;
-    opacity: 1;
-    width: 54vmax;
-  }
-}
-
-.blockquote {
-  display: none;
+/* blockquote */
+.blockquote p,
+.blockquote footer {
+  font-size: 1.2rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 @media (min-width: 992px) {
   .blockquote {
     display: block;
+    width: 85%;
+    text-align: right;
   }
   .blockquote p,
   .blockquote footer {
     font-size: 1.4rem;
     text-align: right;
-    top: 4em;
-    margin-left: 1em;
-    position: absolute;
-    z-index: 2 !important;
-    padding-left: 4em;
+    line-height: 2em;
     color: rgba(0, 0, 0, 0.5);
   }
 
-  .blockquote footer::after {
+  .blockquote footer::before {
     content: "";
     display: block;
-    width: 100%;
+    width: 40%;
     height: 2px;
     background: #e9d732;
     transition: width 0.3s;
+    position: absolute;
+    top: 6;
+    left: 50%;
   }
 
   .blockquote p strong {
@@ -222,17 +229,7 @@
   }
 }
 
-/* tentang */
-section#about {
-  margin-top: 1em;
-  margin-bottom: 3em;
-  height: 600px;
-}
-
-section#about .row {
-  height: 530px;
-}
-
+/* heading section */
 .heading {
   color: #72b860;
   font-weight: 600;
@@ -249,11 +246,21 @@ section#about .row {
   margin-left: -4.1em;
 }
 
+/* tentang */
+section#about {
+  margin-top: 1em;
+  height: 600px;
+}
+
+section#about .row {
+  height: 530px;
+}
+
 section#about .container .col-md-6 h3 {
   font-size: 1rem;
-  margin-top: 1.4em;
   text-align: center;
   line-height: 1.5em;
+  margin-top: 1em;
   opacity: 0.8;
 }
 
@@ -272,7 +279,6 @@ section#about .container strong {
 section#about img {
   border-radius: 0.7em;
   transition: 0.5s;
-  margin-top: 1.3em;
 }
 
 section#about img:hover {
@@ -281,11 +287,8 @@ section#about img:hover {
 }
 
 @media (min-width: 992px) {
-  .container .heading {
-    margin-bottom: 1.5em;
-  }
   section#about {
-    margin-top: 2em;
+    margin-top: 0;
   }
 
   section#about .container .col-md-6 h3 {
@@ -304,8 +307,11 @@ section#about img:hover {
 }
 
 /* pendaftaran */
+section#pendaftaran {
+  padding-top: 1rem;
+}
 
-section#pendaftaran .container-fluid {
+section#pendaftaran {
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.1),
@@ -314,6 +320,7 @@ section#pendaftaran .container-fluid {
     url("img/background.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   height: 600px;
 }
 
@@ -321,17 +328,8 @@ section#pendaftaran .container {
   height: 100%;
 }
 
-section#pendaftaran .container .row {
-  height: 93%;
-}
-
-section#pendaftaran .heading {
-  color: #72b860;
-  font-weight: 600;
-  position: relative;
-  margin-bottom: 1em;
-  margin-top: 1em;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+section#pendaftaran .row {
+  height: 530px;
 }
 
 .ngaji-title {
@@ -362,6 +360,10 @@ section#pendaftaran .heading {
 }
 
 @media (min-width: 992px) {
+  section#pendaftaran {
+    margin-top: 0;
+  }
+
   .ngaji-title {
     font-size: 4rem;
     line-height: 1.3em;
@@ -375,11 +377,6 @@ section#pendaftaran .heading {
   .ngaji-isi {
     font-size: 1rem;
     line-height: 1.7em;
-  }
-
-  section#pendaftaran .heading {
-    margin-bottom: 0em;
-    margin-top: 0.6em;
   }
 }
 
