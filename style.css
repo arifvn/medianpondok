@@ -6,17 +6,11 @@ body {
   overflow-x: hidden;
 }
 
-.dropdown-menu {
-  min-width: 0;
-}
-.dropdown-menu .dropdown-item {
-  white-space: normal;
-}
-
 /* navbar */
 
 .navbar {
   background-color: #72b860;
+  overflow-x: hidden;
 }
 
 .nav-item {
