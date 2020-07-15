@@ -37,6 +37,12 @@ body {
   letter-spacing: 0.29em;
 }
 
+@media (min-width: 768px) {
+  .nav-item:last-child {
+    margin-bottom: 0em;
+  }
+}
+
 @media (min-width: 992px) {
   .navbar {
     background-color: transparent;
@@ -89,14 +95,17 @@ body {
   width: 54vmax;
 }
 
+@media (min-width: 768px) {
+  .blob {
+    opacity: 1;
+    width: 75vmax;
+  }
+}
+
 /* blob */
 @media (min-width: 992px) {
   .blob {
-    position: absolute;
-    fill: #fff;
     opacity: 1;
-    right: 0;
-    top: 0;
     width: 54vmax;
   }
 }
@@ -105,8 +114,7 @@ body {
 
 .jumbotron {
   background-color: #72b860;
-  height: 100vh;
-  /* overflow-x: hidden; */
+  height: 102vh;
 }
 
 .jumbotron .median-title {
@@ -142,7 +150,7 @@ body {
   opacity: 0.8;
 }
 
-.jumbotron button {
+.jumbotron a {
   padding-left: 1em;
   padding-right: 1em;
   text-transform: uppercase;
@@ -162,9 +170,37 @@ body {
   height: 100%;
 }
 
+@media (min-width: 768px) {
+  .jumbotron {
+    height: 80vh;
+  }
+
+  .jumbotron .container {
+    height: 70vh;
+  }
+
+  .jumbotron .median-title {
+    font-size: 2rem;
+    margin-bottom: 0.2em;
+    margin-top: 0;
+  }
+
+  .jumbotron .median-title-span {
+    font-size: 3rem;
+    margin-top: 0.4em;
+    text-align: center;
+    line-height: 0.7em;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  }
+}
+
 @media (min-width: 992px) {
   .jumbotron {
     height: 100vh;
+  }
+
+  .jumbotron .container {
+    height: 80vh;
   }
 
   .jumbotron .median-title {
@@ -185,12 +221,12 @@ body {
     margin-top: 3em;
   }
 
-  .jumbotron button {
+  .jumbotron a {
     width: 20em;
     font-size: 1.3rem;
   }
 
-  .jumbotron button:hover {
+  .jumbotron a:hover {
     background-color: #feee58;
     color: #72b860;
   }
@@ -199,15 +235,22 @@ body {
 /* blockquote */
 .blockquote p,
 .blockquote footer {
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
   color: rgba(0, 0, 0, 0.4);
+}
+
+.jumbotron .card::before {
+  content: "";
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-top: 5px solid #e9d732;
 }
 
 @media (min-width: 992px) {
   .blockquote {
     display: block;
-    width: 85%;
     text-align: right;
   }
   .blockquote p,
@@ -292,7 +335,25 @@ section#about img:hover {
   cursor: pointer;
 }
 
+@media (min-width: 768px) {
+  section#about {
+    height: 480px;
+  }
+
+  section#about .row {
+    height: 420px;
+  }
+}
+
 @media (min-width: 992px) {
+  section#about {
+    height: 600px;
+  }
+
+  section#about .row {
+    height: 530px;
+  }
+
   section#about {
     margin-top: 0;
   }
@@ -365,12 +426,17 @@ section#pendaftaran .row {
   margin-bottom: 1em;
 }
 
+@media (min-width: 768px) {
+  section#pendaftaran {
+    height: 550px;
+  }
+}
+
 @media (min-width: 992px) {
   section#pendaftaran {
     height: 600px;
     margin-top: 0;
   }
-
   .ngaji-title {
     font-size: 4rem;
     line-height: 1.3em;
@@ -393,7 +459,7 @@ section#pendaftaran .row {
 
 /* alamat */
 section#alamat {
-  height: 600px;
+  height: 700px;
   margin-top: 1em;
 }
 
@@ -443,7 +509,25 @@ section#alamat .container .col-md-6 strong {
   width: 100%;
 }
 
+@media (min-width: 768px) {
+  section#alamat {
+    height: 500px;
+  }
+
+  section#alamat .row:first-child {
+    height: 430px;
+  }
+}
+
 @media (min-width: 992px) {
+  section#alamat {
+    height: 600px;
+  }
+
+  section#alamat .row:first-child {
+    height: 530px;
+  }
+
   section#alamat {
     padding-top: 0rem;
   }
@@ -542,3 +626,104 @@ footer .row {
 ::-webkit-scrollbar-thumb:hover {
   background: #72b860;
 }
+
+/* notification */
+#cooltoast-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: auto;
+  z-index: 1200;
+}
+
+.cooltoast-toast {
+  position: relative;
+  padding: 8px 12px;
+  margin: 16px;
+  border-radius: 8px;
+  background: #F5F5F5;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.19);
+  animation-duration:  .3s;
+  animation-name: cooltoast;
+  animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+
+.cooltoast-fadeOut {
+  animation-name: cooltoastFadeOut;
+  animation-duration: .3s;
+  animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  animation-fill-mode: forwards;
+}
+
+#cooltoast-container p,
+#cooltoast-container h4 {
+  margin: 3px 0!important;
+}
+
+.cooltoast-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #72b860;
+}
+
+.cooltoast-text {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.cooltoast-icon {
+  position: absolute;
+  top: 5px;
+  left: -40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: #FFF;
+}
+
+.cooltoast-toast a, .cooltoast-toast a:hover {
+  color: #549EDB !important;
+  text-decoration: none !important;
+}
+
+/** toast types */
+.cooltoast-success {
+  border-bottom: 2px solid #51C625;
+}
+
+.cooltoast-warning {
+  border-bottom: 2px solid #DB9215;
+}
+
+.cooltoast-error {
+  border-bottom: 2px solid #DB2B1D;
+}
+
+.cooltoast-info {
+  border-bottom: 2px solid #27ABDB;
+}
+
+@keyframes cooltoast {
+  from {
+    transform: translate3d(400px, 0, 0);;
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes cooltoastFadeOut {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(400px, 0, 0);
+    opacity: 0;
+  }
+}
+Contact GitHub API Training Shop Blog About

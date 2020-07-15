@@ -23,9 +23,9 @@
     <title>PPHK</title>
 </head>
 
-<body>
+<body onload="show()">
     <header>
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <nav class="navbar fixed-top navbar-expand-md navbar-dark">
             <div class="container">
                 <a class="navbar-brand bold" href="#">PP Husnul Khotimah <br><small>Essalafy University</small> </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -64,18 +64,22 @@
                             <span class="median-title-span">Khotimah</span>
                             <p>Menerima <strong>Pendaftaran</strong> Santri Baru</p>
                             <div class="col text-center">
-                                <button href="" class="btn btn-outline-light text-center">Daftar</button>
+                                <a href="#pendaftaran" class="btn btn-outline-light text-center">Daftar</a>
                             </div>
                         </div>
-                        <div class="col-md-6 d-flex justify-content-end">
-                            <blockquote class="blockquote">
-                                <p class="mb-0">Mereka yang tidak bisa <strong>beramar ma'ruf</strong> dan
-                                    <strong>nahi
-                                        munkar</strong> kepada
-                                    dirinya
-                                    sendiri Amat tidak pantas melakukan itu kepada orang lain.</p>
-                                <footer class="blockquote-footer">Alm. K.H. Maimoen Zubair </footer>
-                            </blockquote>
+                        <div class="col-md-6">
+                            <div class="card m-3 shadow-lg">
+                                <div class="card-body">
+                                    <blockquote class="blockquote">
+                                        <p class="mt-2 mb-0">Mereka yang tidak bisa <strong>beramar ma'ruf</strong> dan
+                                            <strong>nahi
+                                                munkar</strong> kepada
+                                            dirinya
+                                            sendiri Amat tidak pantas melakukan itu kepada orang lain.</p>
+                                        <footer class="blockquote-footer">Alm. K.H. Maimoen Zubair </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -116,7 +120,7 @@
                         </div>
                     </div>
                     <div class="col-md-6" data-aos="zoom-in">
-                        <span class="ngaji-title">Ayuk, Ngaji</span>
+                        <span class="ngaji-title">Ayok, Mondok</span>
                         <span class="ngaji-subtitle">Bekali kehidupan dengan lebih memahami ajaran Agama</span>
                         <span class="ngaji-isi">* Pendaftaran dapat melalui form berikut atau datang langsung ke
                             <strong>Ponpes Husnul Khotimah</strong></span>
@@ -181,7 +185,16 @@
                             </div>
                             <div class="col-md-11">
                                 <span>Bapak <strong>K.H. Huda Hudallah</strong></span><br>
-                                <span>No Telp. 0852-9047-0046</span>
+                                <span>No Telp - 0852-9047-0046</span>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-1">
+                                <i class="fas fa-comment text-yel"></i>
+                            </div>
+                            <div class="col-md-11">
+                                <span>Kang<strong> Anang Romadhon</strong> (Pengurus)</span><br>
+                                <span>WA - 0852-9047-0046</span>
                             </div>
                         </div>
                     </div>
@@ -220,6 +233,7 @@
         </div>
     </footer>
 
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -252,6 +266,120 @@
             }
         };
     </script>
+
+    <script>
+        function show() {
+            console.log('works');
+            toast.create({
+                title: 'Pemberitahuan!',
+                text: 'Website ini dikelola Santri. <br>Segala bentuk kesalahan mohon <br>disampaikan ke No. WA pengurus dibawah.',
+
+            });
+        };
+
+        (function (root, factory) {
+            try {
+                // commonjs
+                if (typeof exports === 'object') {
+                    module.exports = factory();
+                    // global
+                } else {
+                    root.toast = factory();
+                }
+            } catch (error) {
+                console.log('Isomorphic compatibility is not supported at this time for toast.')
+            }
+        })(this, function () {
+
+            // We need DOM to be ready
+            if (document.readyState === 'complete') {
+                init();
+            } else {
+                window.addEventListener('DOMContentLoaded', init);
+            }
+
+            // Create toast object
+            toast = {
+                // In case toast creation is attempted before dom has finished loading!
+                create: function () {
+                    console.error([
+                        'DOM has not finished loading.',
+                        '\tInvoke create method when DOM\s readyState is complete'
+                    ].join('\n'))
+                }
+            };
+            var autoincrement = 0;
+
+            function init() {
+                // Toast container
+                var container = document.createElement('div');
+                container.id = 'cooltoast-container';
+                document.body.appendChild(container);
+
+                // @Override
+                // Replace create method when DOM has finished loading
+                toast.create = function (options) {
+                    var toast = document.createElement('div');
+                    toast.id = ++autoincrement;
+                    toast.id = 'toast-' + toast.id;
+                    toast.className = 'cooltoast-toast';
+
+                    // title
+                    if (options.title) {
+                        var h4 = document.createElement('h4');
+                        h4.className = 'cooltoast-title';
+                        h4.innerHTML = options.title;
+                        toast.appendChild(h4);
+                    }
+
+                    // text
+                    if (options.text) {
+                        var p = document.createElement('p');
+                        p.className = 'cooltoast-text';
+                        p.innerHTML = options.text;
+                        toast.appendChild(p);
+                    }
+
+                    // click callback
+                    if (typeof options.callback === 'function') {
+                        toast.addEventListener('click', options.callback);
+                    }
+
+                    // toast api
+                    toast.hide = function () {
+                        toast.className += ' cooltoast-fadeOut';
+                        toast.addEventListener('animationend', removeToast, false);
+                    };
+
+                    // autohide
+                    if (options.timeout) {
+                        setTimeout(toast.hide, options.timeout);
+                    }
+                    // else setTimeout(toast.hide, 2000);
+
+                    if (options.type) {
+                        toast.className += ' cooltoast-' + options.type;
+                    }
+
+                    toast.addEventListener('click', toast.hide);
+
+
+                    function removeToast() {
+                        document.getElementById('cooltoast-container').removeChild(toast);
+                    }
+
+                    document.getElementById('cooltoast-container').appendChild(toast);
+                    return toast;
+
+                }
+            }
+
+            return toast;
+
+        });
+    </script>
+
+
 </body>
 
 </html>
