@@ -8,6 +8,14 @@ body {
 
 /* navbar */
 
+#logo {
+  width: 3em;
+  height: 3em;
+  margin: 0;
+  margin-right: 5px;
+  padding: 0;
+}
+
 .navbar {
   background-color: #72b860;
   overflow-x: hidden;
@@ -40,6 +48,10 @@ body {
 @media (min-width: 768px) {
   .nav-item:last-child {
     margin-bottom: 0em;
+  }
+
+  .navbar-brand small {
+    font-size: 0.7rem;
   }
 }
 
@@ -641,24 +653,24 @@ footer .row {
   padding: 8px 12px;
   margin: 16px;
   border-radius: 8px;
-  background: #F5F5F5;
+  background: #f5f5f5;
   cursor: pointer;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.19);
-  animation-duration:  .3s;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.19);
+  animation-duration: 0.3s;
   animation-name: cooltoast;
-  animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .cooltoast-fadeOut {
   animation-name: cooltoastFadeOut;
-  animation-duration: .3s;
-  animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  animation-duration: 0.3s;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   animation-fill-mode: forwards;
 }
 
 #cooltoast-container p,
 #cooltoast-container h4 {
-  margin: 3px 0!important;
+  margin: 3px 0 !important;
 }
 
 .cooltoast-title {
@@ -680,34 +692,35 @@ footer .row {
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  background: #FFF;
+  background: #fff;
 }
 
-.cooltoast-toast a, .cooltoast-toast a:hover {
-  color: #549EDB !important;
+.cooltoast-toast a,
+.cooltoast-toast a:hover {
+  color: #549edb !important;
   text-decoration: none !important;
 }
 
 /** toast types */
 .cooltoast-success {
-  border-bottom: 2px solid #51C625;
+  border-bottom: 2px solid #51c625;
 }
 
 .cooltoast-warning {
-  border-bottom: 2px solid #DB9215;
+  border-bottom: 2px solid #db9215;
 }
 
 .cooltoast-error {
-  border-bottom: 2px solid #DB2B1D;
+  border-bottom: 2px solid #db2b1d;
 }
 
 .cooltoast-info {
-  border-bottom: 2px solid #27ABDB;
+  border-bottom: 2px solid #27abdb;
 }
 
 @keyframes cooltoast {
   from {
-    transform: translate3d(400px, 0, 0);;
+    transform: translate3d(400px, 0, 0);
     opacity: 0;
   }
   to {
@@ -726,4 +739,3 @@ footer .row {
     opacity: 0;
   }
 }
-Contact GitHub API Training Shop Blog About
