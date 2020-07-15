@@ -6,8 +6,9 @@ body {
   overflow-x: hidden;
 }
 
-/* navbar */
+/* ------------------ LANDING PAGE --------------------*/
 
+/* navbar */
 #logo {
   width: 3em;
   height: 3em;
@@ -737,5 +738,279 @@ footer .row {
   to {
     transform: translate3d(400px, 0, 0);
     opacity: 0;
+  }
+}
+
+/* ------------------ MEDIAN PUBLIKASI --------------------*/
+
+/* TITLE SECTION */
+.median {
+  color: #72b860 !important;
+}
+
+.median-logo {
+  opacity: 0.7;
+}
+
+#title {
+  margin-top: 20vh;
+}
+
+#title {
+  height: 430px;
+}
+
+@media (min-width: 576px) {
+  #title {
+    height: 450px;
+  }
+}
+
+@media (min-width: 767px) {
+  #title {
+    height: 300px;
+  }
+}
+
+@media (min-width: 992px) {
+  #title {
+    height: 450px;
+  }
+}
+
+@media (min-width: 397px) {
+  .carousel {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 80%;
+  }
+}
+
+@media (min-width: 493px) {
+  .carousel {
+    width: 60%;
+    height: 60%;
+  }
+}
+
+@media (min-width: 538px) {
+  .carousel {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 70%;
+  }
+}
+
+@media (min-width: 538px) {
+  .carousel {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 70%;
+  }
+}
+
+@media (min-width: 576px) {
+  .carousel {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    height: 75%;
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .carousel::before {
+    content: "";
+    width: 90%;
+    height: 90%;
+    display: block;
+    position: absolute;
+    left: -15px;
+    bottom: -15px;
+    background-color: #e9d732;
+  }
+}
+
+#title h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 0;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+#title p {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+#title span.dikelola {
+  padding: 0.3em 3em;
+  display: inline-block;
+  border-radius: 1em;
+  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel::before {
+  content: "";
+  width: 100%;
+  display: block;
+  height: 100%;
+  position: absolute;
+  bottom: -10px;
+  background-color: #e9d732;
+}
+
+@media (min-width: 992px) {
+  #title h1 {
+    font-size: 5rem;
+    font-weight: 800;
+  }
+
+  #title p {
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+.wrapfooter {
+  position: absolute;
+  bottom: 2em;
+  right: 3em;
+  display: block;
+  padding: 1em;
+  background-color: #fff;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.author-thumb {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 1em;
+  border-radius: 100%;
+}
+
+span.post-name,
+span.post-date,
+span.author-meta {
+  float: left;
+}
+
+span.post-date,
+span.post-read {
+  color: rgba(0, 0, 0, 0.44);
+}
+span.post-read-more {
+  margin-left: 1em;
+  display: inline-block;
+  margin-top: 0.5em;
+}
+span.post-read-more a {
+  color: rgba(0, 0, 0, 0.44);
+}
+span.post-name a,
+span.post-read-more a:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+.dot:after {
+  content: "·";
+  margin-left: 0.5em;
+  margin-right: 0.3em;
+}
+
+/* ARTICLE */
+.section-title h2 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 1.2em;
+  margin-top: 0.7em;
+}
+.section-title span {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.44);
+  display: inline-block;
+  padding-bottom: 20px;
+  margin-bottom: -1px;
+}
+
+/* article card */
+#article .row .card {
+  margin-bottom: 1.5em;
+}
+
+#article .row .card::after {
+  content: "";
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-top: 5px solid #e9d732;
+}
+
+.article-container {
+  text-align: center;
+}
+
+.article-title {
+  font-weight: 700;
+  opacity: 0.8;
+  margin: 1em;
+}
+
+.article-body {
+  opacity: 0.8;
+  display: inline-block;
+  margin: 0 1em 1em 1em;
+}
+
+.wrapfooter-article {
+  display: block;
+  padding: 1em;
+  margin: 0 1em 1em 1em;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+#article .col-md-5 {
+  height: 200px;
+}
+
+.thumbnail-article {
+  background-size: cover;
+  height: 100%;
+  display: block;
+  background-position: center;
+  background-origin: border-box !important;
+  border-top-left-radius: 2px;
+  background-image: url("/img/title.jpg");
+}
+
+@media (min-width: 992px) {
+  #article .col-md-5 {
+    height: 250px;
+  }
+
+  .article-container {
+    text-align: left;
+  }
+
+  .article-title {
+    margin: 1em 1em 0.5em 0;
+  }
+
+  .article-body {
+    margin: 0 1em 0 0;
   }
 }
